@@ -8,7 +8,10 @@
     "check": "node --check public/app.mjs && node --check src/worker.mjs",
     "db:generate": "drizzle-kit generate",
     "start": "node standalone/server.mjs",
-    "test": "node scripts/test-game.mjs && node scripts/test-release.mjs && node scripts/test-http.mjs"
+    "test": "node scripts/test-game.mjs && node scripts/test-release.mjs && node scripts/test-http.mjs && node scripts/test-vercel-runtime.mjs"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.0"
   },
   "devDependencies": {
     "esbuild": "0.28.0",
