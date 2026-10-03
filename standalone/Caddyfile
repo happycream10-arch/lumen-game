@@ -1,0 +1,4 @@
+{$LUMEN_DOMAIN} {
+  encode zstd gzip
+  reverse_proxy lumen:3000
+}

@@ -1,0 +1,18 @@
+{
+  "name": "lumen-card-collector",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node --check public/app.mjs && node --check src/worker.mjs",
+    "db:generate": "drizzle-kit generate",
+    "start": "node standalone/server.mjs",
+    "test": "node scripts/test-game.mjs && node scripts/test-release.mjs && node scripts/test-http.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.0",
+    "drizzle-kit": "0.31.10",
+    "drizzle-orm": "0.45.2"
+  }
+}
