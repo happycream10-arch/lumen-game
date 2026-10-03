@@ -1,5 +1,5 @@
 import { neon } from '@neondatabase/serverless';
-import { createVercelHandler } from '../src/vercel-runtime.mjs';
+import { createVercelHandler } from './vercel-runtime.mjs';
 
 const connectionString = process.env.STORAGE_URL;
 const handler = connectionString ? createVercelHandler({ sql: neon(connectionString) }) : null;
