@@ -9,6 +9,7 @@ const reply = (body, status = 200, headers = {}) => new Response(JSON.stringify(
 const migrations = [
   `CREATE TABLE IF NOT EXISTS lumen_saves (owner text PRIMARY KEY NOT NULL, payload text NOT NULL, revision integer NOT NULL DEFAULT 0, updated_at bigint NOT NULL)`,
   `CREATE TABLE IF NOT EXISTS lumen_rooms (code text PRIMARY KEY NOT NULL, host text NOT NULL, guest text, created_at bigint NOT NULL)`,
+  `CREATE TABLE IF NOT EXISTS lumen_room_matches (code text PRIMARY KEY NOT NULL, match_no integer NOT NULL DEFAULT 1, host_ready integer NOT NULL DEFAULT 0, guest_ready integer NOT NULL DEFAULT 0)`,
   `CREATE INDEX IF NOT EXISTS lumen_rooms_host_created ON lumen_rooms (host, created_at)`,
   `CREATE INDEX IF NOT EXISTS lumen_rooms_guest_created ON lumen_rooms (guest, created_at)`,
   `CREATE TABLE IF NOT EXISTS local_users (id text PRIMARY KEY, username text UNIQUE NOT NULL, salt text NOT NULL, password_hash text NOT NULL, recovery_hash text NOT NULL, created_at bigint NOT NULL)`,

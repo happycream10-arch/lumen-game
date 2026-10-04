@@ -75,7 +75,7 @@ assert.equal(state.status, 200);
 assert.ok(seenOwner?.startsWith('local:'));
 assert.notEqual(seenOwner, 'forged-by-client');
 assert.equal((await state.json()).owner, seenOwner);
-assert.equal(migrations.length, 8);
+assert.equal(migrations.length, 9);
 
 const recovered = await handle(post('/api/account/recover', { username: 'tester', password: 'a new long password', recoveryCode: credentials.recoveryCode }));
 assert.equal(recovered.status, 200);

@@ -15,6 +15,13 @@
       "when": 1790963680169,
       "tag": "0001_greedy_patriot",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1791140186664,
+      "tag": "0002_overjoyed_adam_warlock",
+      "breakpoints": true
     }
   ]
 }

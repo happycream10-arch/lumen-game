@@ -1,3 +1,4 @@
 import { sqliteTable, text, integer, index } from 'drizzle-orm/sqlite-core';
 export const saves=sqliteTable('lumen_saves',{owner:text('owner').primaryKey(),payload:text('payload').notNull(),revision:integer('revision').notNull().default(0),updatedAt:integer('updated_at').notNull()});
 export const rooms=sqliteTable('lumen_rooms',{code:text('code').primaryKey(),host:text('host').notNull(),guest:text('guest'),createdAt:integer('created_at').notNull()},t=>[index('lumen_rooms_host_created').on(t.host,t.createdAt),index('lumen_rooms_guest_created').on(t.guest,t.createdAt)]);
+export const roomMatches=sqliteTable('lumen_room_matches',{code:text('code').primaryKey(),matchNo:integer('match_no').notNull().default(1),hostReady:integer('host_ready').notNull().default(0),guestReady:integer('guest_ready').notNull().default(0)});
